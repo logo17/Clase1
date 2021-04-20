@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#0296D1">
+
+    <ImageView
+        android:id="@+id/userImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/userNameTextView"
+        style="@style/ContactInformation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/userImageView"
+        android:layout_alignBottom="@id/userImageView"
+        android:layout_toStartOf="@id/userImageView"
+        android:gravity="center"
+        tools:text="Heriberto Urena Madrigal" />
+
+    <TextView
+        android:id="@+id/userEmailTextView"
+        style="@style/ContactInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userNameTextView"
+        android:layout_alignStart="@id/userNameTextView"
+        android:layout_alignEnd="@id/userNameTextView"
+        android:gravity="center"
+        android:padding="16dp"
+        tools:text="test@test.com" />
+
+    <EditText
+        android:id="@+id/firstEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userEmailTextView"
+        android:hint="Email" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/secondEditTextContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firstEditText"
+        android:hint="Email"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/firstButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_below="@id/secondEditTextContainer"/>
+
+    <Button
+        android:id="@+id/secondButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Need help?"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_below="@id/firstButton"/>
+</RelativeLayout>
